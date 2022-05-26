@@ -1,2 +1,2 @@
-# cypress-travel-demo
+# Cypress automation demo
 Cypress automation demo
