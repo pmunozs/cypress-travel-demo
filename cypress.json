@@ -2,6 +2,8 @@
     "$schema": "https://on.cypress.io/cypress.schema.json",
     "baseUrl": "https://www.phptravels.net",
     "chromeWebSecurity": false,
+    "waitForAnimations": false,
+    "scrollBehavior": "center",
     "viewportWidth": 1280,
     "viewportHeight": 800
 }

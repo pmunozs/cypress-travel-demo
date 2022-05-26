@@ -7,6 +7,10 @@ class Homepage {
     getSignupButton() {
         return cy.get('[a[href*=/signup]');
     }
+
+    visit() {
+        cy.visit('/')
+    }
 }
 
 export default Homepage;
