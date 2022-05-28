@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/pmunozs/cypress-travel-demo#readme",
   "devDependencies": {
-    "@faker-js/faker": "^7.1.0",
+    "@faker-js/faker": "^6.3.1",
     "cypress": "^9.7.0"
   }
 }
