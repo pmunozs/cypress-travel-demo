@@ -9,7 +9,7 @@ describe('Signup', () => {
         cy.intercept('/signup').as('Signup');
         signup.visit();
         cy.wait('@Signup').its('response.statusCode').should('eq', 200);
-    })
+    });
 
     it('User should be able to create customer profile', () => {
         signup.getName().type(faker.name.firstName());
@@ -21,9 +21,9 @@ describe('Signup', () => {
         cy.wait('@Signup').its('response.statusCode').should('eq', 302);
         cy.get('.alert-success.signup').should('be.visible');
         cy.url().should('contain', 'login/signup');
-    })
+    }); 
 
-    it.only('Display error message if e-mail already exists', () => {
+    it('Display error message if e-mail already exists', () => {
         cy.intercept('**/failed').as('Failed');
         signup.getName().type(faker.name.firstName());
         signup.getLastName().type(faker.name.lastName());
@@ -31,7 +31,6 @@ describe('Signup', () => {
         signup.getEmail().type('user@phptravels.com');
         signup.getPassword().type(faker.internet.password(8));
         signup.submit().click();
-        cy.wait('@Signup').its('response.statusCode').should('eq', 302);
         cy.wait('@Failed').its('response.statusCode').should('eq', 200);
         cy.get('.alert-danger').should('be.visible');
         cy.url().should('contain', 'signup/failed');
